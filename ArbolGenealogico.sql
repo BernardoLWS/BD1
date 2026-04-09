@@ -23,6 +23,7 @@ insert into persona(id,nombre,sexo,idpadre,idmadre) values
     (8,'Fabiola Chumacero Mendez','f',5,6),
     (9,'Maria Fernandez','f',null,null),
     (10,'Carlos Chumacero Fernandez','m',5,9);
-    
-    
+select *
+from persona
+where idpadre = 1 and idmadre = 2;
     

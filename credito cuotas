@@ -1,0 +1,28 @@
+create table credito (
+	nro int primary key,
+	fecha varchar(10) not null,
+	plazo tinyint ,
+	monto int
+);
+insert into credito(nro,fecha,plazo,monto) values
+  (100,'10/01/2026',3,600),
+  (101,'20/02/2026',5,2500);
+create table cuotas(
+	nroC int ,
+	nro tinyint,
+	fecha varchar(10) not null,
+	monto int,
+	primary key(nroC,nro),
+	foreign key (nroC) references credito(nro)
+);
+insert into cuotas(nroC,nro,fecha,monto) values
+(100,1,'10,02/2026',200),
+(100,2,'10,03/2026',200),
+(100,3,'10,04/2026',200),
+(101,1,'20,03/2026',500),
+(101,2,'20,04/2026',500),
+(101,3,'20,04/2026',500),
+(103,4,'20,05/2026',500),
+(101,5,'20,06/2026',500);
+select*
+from cuotas
